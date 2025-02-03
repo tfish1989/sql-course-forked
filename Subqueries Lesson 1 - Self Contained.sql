@@ -23,9 +23,11 @@ WHERE
    );
 
 /*
+List the patient stays in Surgical wards.  (These wards end with the word 'Surgery'.)
 This  subquery returns a one column list to use in the WHERE <column> IN (...)
-List the patient stays in Surgery wards
+Note: You can list patients in all wards apart from surgical wards by using NOT IN
 */
+
 SELECT
 	ps.PatientId
 	, ps.Hospital
@@ -37,6 +39,7 @@ WHERE
 	ps.Ward IN (
 	SELECT DISTINCT Ward FROM dbo.PatientStay WHERE Ward LIKE '%Surgery' 
 	);
+
 
 /*
  * This subqueries are based on a different table to the outer query

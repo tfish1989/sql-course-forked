@@ -1,12 +1,38 @@
 /*
 Subqueries Exercise 2 - Correlated
 
-This exercise will use two related tables
+A correlated subquery in SQL is a subquery that references columns from the outer query, 
+It is executed once for each row processed by the outer query. 
+The subquery is re-evaluated for every row, making it useful for row-by-row comparisons 
+but potentially less efficient than non-correlated subqueries.
+*/
+
+/*
+List the patient stays in Surgical wards.  (These wards end with the word 'Surgery'.)
+Note: You can list patients in all wards apart from surgical wards by using NOT exists
+*/
+
+SELECT
+	ps.PatientId
+	, ps.Hospital
+	, ps.Ward
+	, ps.Tariff
+FROM
+	PatientStay ps
+WHERE
+	EXISTS (
+	SELECT 1 FROM dbo.PatientStay sub WHERE Ward LIKE '%Surgery' and ps.PatientId = sub.PatientId
+	);
+
+
+/*
+This next tasks use two related tables
 * PricePaidSW12 - sales of properties in London SW12 from 1995 to 2019. 
 * PropertyTypeLookup - a lookup table on the PropertyType column of PricePaidSW12.  This contains a one letter code e.g. 'D'.  
-  The PropertyTypeLookup has a column PropertyTypeCode with matching values and a column PropertyTypeName with the description e.g. 'Detached'
 
-In this example we will focus sales in  a particular street, Ranmere Street
+The PropertyTypeLookup has a column PropertyTypeCode with matching values and a column PropertyTypeName with the description e.g. 'Detached'
+
+The queries focus sales on a particular street, Ranmere Street
 */
 
 -- List properties sold in Ranmere Street
