@@ -11,10 +11,11 @@ FROM
 	PatientStay ps ;
 
 /*
-1. List the patients -
-a) in the Oxleas or PRUH hospitals and
-b) admitted in February 2024
-c) only the Surgery wards
+1. Filter the list the patients to show only those  -
+a) in the Oxleas hospital,
+b) and also in the PRUH hospital,
+c) admitted in February 2024
+d) only the surgical wards (i.e. wards ending with the word Surgery)
 
 2. Show the PatientId, AdmittedDate, DischargeDate, Hospital and Ward columns only, not all the columns.
 3. Order results by AdmittedDate (latest first) then PatientID column (high to low)
