@@ -195,3 +195,17 @@ FROM
 	PatientStay ps
 JOIN DimHospital h ON
 	ps.Hospital = h.Hospital;
+
+/*
+ A more precise way of doing a JOIN
+*/
+
+SELECT
+	ps.PatientId
+	, ps.AdmittedDate
+	, h.HospitalType
+	, h.HospitalSize
+FROM
+	PatientStay ps
+JOIN DimHospital h ON
+	ps.Hospital = h.Hospital;
