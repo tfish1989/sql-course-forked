@@ -97,10 +97,10 @@ UNPIVOT
 ) AS unpivot_table
 
 -- An alternative way to unpivot not using the UNPIVOT keyword
-SELECT 	Category, North AS Movement FROM #PivotMessageTable
+SELECT 	Category, 'North' As Region, North AS Movement FROM #PivotMessageTable
 UNION ALL
-SELECT 	Category, South AS Movement FROM #PivotMessageTable
+SELECT 	Category, 'South' As Region, South AS Movement FROM #PivotMessageTable
 UNION ALL
-SELECT 	Category, East AS Movement FROM #PivotMessageTable
+SELECT 	Category, 'East' As Region, East AS Movement FROM #PivotMessageTable
 UNION ALL
-SELECT 	Category, West AS Movement FROM #PivotMessageTable
+SELECT 	Category, 'West' As Region, West AS Movement FROM #PivotMessageTable
