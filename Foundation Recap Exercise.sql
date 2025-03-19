@@ -28,7 +28,7 @@ d) only the surgical wards (i.e. wards ending with the word Surgery)
 
 /*
 5. How many patients has each hospital admitted? 
-6. How much is the total tarriff for each hospital?
+6. How much is the total tariff for each hospital?
 7. List only those hospitals that have admitted over 10 patients
 8. Order by the hospital with most admissions first
 */
