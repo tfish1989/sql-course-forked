@@ -29,7 +29,6 @@ A "searched form" CASE statement based on a boolean condition
 SELECT
 	ps.PatientId
 	, ps.Hospital
-	, ps.Hospital
 	, ps.Ward
 	, CASE
 		WHEN ps.Ward LIKE '%Surgery' THEN 'Surgical'
