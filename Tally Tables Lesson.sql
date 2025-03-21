@@ -24,7 +24,7 @@ Exercise: write a SQL statement to find out how many rows are in this table.  Ar
 -- Here is a simple, but not good, way to build a Dates table for 2024
 SELECT 
 	t.N AS DayOfYear
-	,DATEADD(DAY, t.N, '2023-12-31') AS TheDate
+	--,DATEADD(DAY, t.N, '2023-12-31') AS TheDate
 FROM 
 	Tally t WHERE N <=366
 order by 1
