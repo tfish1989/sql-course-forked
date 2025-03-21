@@ -47,7 +47,7 @@ SELECT
 	2000 + n  AS Year
 INTO #Year
 	from Tally
-where n between 21 and 23
+where n between 21 and 24
 
 SELECT * FROM #Year
 
