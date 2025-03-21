@@ -38,6 +38,7 @@ FROM dbo.FootballMatch m
 --SELECT * FROM MatchResult
 SELECT
 	Team
+	, COUNT(*) as Played
 	, SUM(Won) AS Won
 	, SUM(Drawn) AS Drawn
 	, SUM(Lost) AS Lost
@@ -53,6 +54,7 @@ GROUP BY
 
 SELECT
 	Team
+	, Played
 	, Won
 	, Drawn
 	, Lost
@@ -97,7 +99,7 @@ FROM
 
 SELECT * FROM #MatchForm;
 
--- we only need the results frtom the last 5 matches
+-- we only need the results from the last 5 matches
 DELETE FROM #MatchForm WHERE ReverseDateRank > 5;  
 
 SELECT * FROM #MatchForm;
